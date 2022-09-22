@@ -15,7 +15,7 @@ Now you can use one of the following image
 
 - `docker.io/openwrtorg/imagebuilder:x86-64-22.03.0`
 - `docker.io/openwrtorg/imagebuilder:x86-64-21.02.3`
-- `docker.io/openwrtorg/imagebuilder:x86-64-19.07.10`
+- `docker.io/openwrtorg/imagebuilder:x86-64-19.07.9`
 - `docker.io/openwrtorg/imagebuilder:x86-64-18.06.7`, this version is not recommend
 
 There're no image after `18.06.7` for `18.06` series.

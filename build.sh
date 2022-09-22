@@ -198,5 +198,5 @@ if [[ $(command -v qemu-img) && ${DRYRUN} -eq 0 ]]; then
         qemu-img convert -c -O qcow2 "${_img}" "${_qcow}"
         qemu-img convert -O qcow2 "${_qcow}" "${_img}" # Ventoy use img
         unset -v _prefix _img _qcow
-    done < <(find "${BINDIR}/targets/x86/64" -iname "*-combined*.img.gz" | sort)
+    done < <(find "${BINDIR}/targets/x86/64" -iname "*-combined*.img.gz" | grep -v efi | sort)
 fi
