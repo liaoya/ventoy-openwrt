@@ -1,4 +1,3 @@
-
 # Created by https://www.toptal.com/developers/gitignore/api/emacs,eclipse,intellij+all,sublimetext,vim,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=emacs,eclipse,intellij+all,sublimetext,vim,visualstudiocode
 
@@ -284,3 +283,4 @@ tags
 bin*/
 
 # End of https://www.toptal.com/developers/gitignore/api/emacs,eclipse,intellij+all,sublimetext,vim,visualstudiocode
+*-bin/
