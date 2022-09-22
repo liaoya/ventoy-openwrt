@@ -1,6 +1,8 @@
 # README
 
-This repo use the official [OpenWrt](https://openwrt.org/) to build a image for [Ventoy](https://www.ventoy.net).
+**Use <https://firmware-selector.openwrt.org> if you want a image with customize package.**
+
+This repo use the official [OpenWrt](https://openwrt.org/) to build a image for [Ventoy](https://www.ventoy.net) and allow to do cusmization.
 [Ventoy](https://www.ventoy.net) is an open source tool to create bootable USB drive for ISO/WIM/IMG/VHD(x)/EFI files.
 You can use it to run [OpenWrt](https://openwrt.org/) on an USB drive easily.
 According to <https://github.com/ventoy/OpenWrtPlugin>, only `kmod-dax` and `kmod-dm` package is required.
@@ -13,14 +15,15 @@ Now you can use one of the following image
 
 - `docker.io/openwrtorg/imagebuilder:x86-64-22.03.0`
 - `docker.io/openwrtorg/imagebuilder:x86-64-21.02.3`
-- `docker.io/openwrtorg/imagebuilder:x86-64-19.07.9`
+- `docker.io/openwrtorg/imagebuilder:x86-64-19.07.10`
 - `docker.io/openwrtorg/imagebuilder:x86-64-18.06.7`, this version is not recommend
 
 There're no image after `18.06.7` for `18.06` series.
 
-The following is another
+The following are some examples
 
 ```bash
+# If you want some other mirror
 # export OPENWRT_MIRROR_PATH=https://mirrors.cloud.tencent.com/openwrt
 
 PACKAGES="${PACKAGES:+$PACKAGES }-wpad-mini -wpad-basic -dnsmasq"
@@ -38,7 +41,14 @@ bash build.sh -v $version
 ```
 
 ```bash
+# Use the third party repository
 bash build.sh -p "luci-app-vlmcsd" -t /work/openwrt/package/22.03/x86-64
 
 env PACKAGES="luci-app-vlmcsd" bash build.sh -t /work/openwrt/package/22.03/x86-64
+```
+
+```bash
+# Customize the image with configuration or additional program
+
+bash build.sh -k $PWD/config
 ```
